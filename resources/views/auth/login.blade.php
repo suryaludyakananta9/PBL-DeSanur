@@ -1,0 +1,3 @@
+@extends('layouts.app')
+@section('title','Login')
+@section('content')<section class="auth-page"><form class="auth-card" method="POST" action="{{ route('login.post') }}">@csrf<h1>Masuk ke DeSanur</h1><p>Kelola favorit dan perjalanan Anda.</p><label>Email<input type="email" name="email" value="{{ old('email') }}" required autofocus></label><label>Password<input type="password" name="password" required></label>@error('email')<div class="form-error">{{ $message }}</div>@enderror<button class="btn btn-primary auth-submit">Login</button><p class="auth-switch">Belum punya akun? <a href="{{ route('register') }}">Registrasi</a></p></form></section>@endsection

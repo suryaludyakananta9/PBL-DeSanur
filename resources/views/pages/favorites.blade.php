@@ -1,0 +1,4 @@
+@extends('layouts.app')
+@section('title','Favorit Saya')
+@section('content')
+<section class="content-page"><div class="page-heading"><span>WISHLIST</span><h1>Destinasi Favorit</h1></div>@if($favorites->isEmpty())<div class="empty-state"><h2>Belum ada destinasi favorit</h2><p>Tambahkan destinasi dari halaman detail.</p></div>@else<div class="cards grid-page">@foreach($favorites as $favorite)<article class="place-card"><a href="{{ route('destination.detail',$favorite->destination->slug) }}"><div class="card-image"><img src="{{ $favorite->destination->images->first()->image_path ?? asset('images/pantai-sanur.jpg') }}"></div></a><div class="card-body"><h3>{{ $favorite->destination->name }}</h3><p>{{ $favorite->destination->category->name }}</p><form method="POST" action="{{ route('traveler.favorite.toggle',$favorite->destination) }}">@csrf<button class="text-link">Hapus Favorit</button></form></div></article>@endforeach</div>@endif</section>@endsection

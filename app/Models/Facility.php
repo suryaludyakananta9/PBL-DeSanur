@@ -6,5 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Facility extends Model
 {
-    //
+    protected $fillable = ['name','description'];
+    public function destinations() { return $this->belongsToMany(Destination::class, 'destination_facility'); }
 }

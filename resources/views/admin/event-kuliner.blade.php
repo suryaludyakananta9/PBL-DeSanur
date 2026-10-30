@@ -1,0 +1,3 @@
+@extends('admin.layout')
+@section('title','Event & Kuliner')
+@section('content')<div class="admin-heading"><div><span>ADMIN</span><h1>Kelola Event & Kuliner</h1></div></div><div class="admin-info"><p>Rancangan area Event & Kuliner sesuai MVP. Data tetap mengikuti struktur SRS tanpa tabel baru.</p></div><div class="quick-grid"><article><strong>Event Lokal</strong><span>Sanur Village Festival • Pesta Kesenian • Event komunitas</span></article><article><strong>Rekomendasi Kuliner</strong><span>Warung Lokal • Seafood • Kuliner tradisional Bali</span></article></div>@endsection
